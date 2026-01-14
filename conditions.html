@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DFGH ETF – Informations investisseurs</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        background: #eef2f6;
+        color: #1a1a1a;
+    }
+
+    .page {
+        padding: 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-top: 10px;
+    }
+
+    p {
+        line-height: 1.5;
+        font-size: 15px;
+    }
+
+    /* BANNIÈRE COOKIES */
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        border-top: 1px solid #ccc;
+        box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
+        padding: 16px;
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+
+    .cookie-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .cookie-header h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .cookie-header a {
+        font-size: 13px;
+        color: #0b5ed7;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+    }
+
+    .cookie-text {
+        font-size: 13px;
+        color: #333;
+        margin-top: 10px;
+    }
+
+    .hidden-sentence {
+        font-size: 11px;
+        color: #777;
+        margin-top: 8px;
+    }
+
+    .cookie-actions {
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-primary {
+        background: #0b5ed7;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .btn-secondary {
+        background: white;
+        color: #0b5ed7;
+        border: 2px solid #0b5ed7;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    /* DESKTOP */
+    @media (min-width: 768px) {
+        .cookie-banner {
+            padding: 25px 40px;
+        }
+
+        .cookie-actions {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            width: auto;
+            padding: 12px 22px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+    }
+
+    /* PIÈGE */
+    .trap-message {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.85);
+        color: white;
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .trap-box {
+        background: #111;
+        padding: 25px;
+        border-radius: 8px;
+        max-width: 420px;
+        width: 100%;
+    }
+
+    .trap-box h1 {
+        color: #ff4d4d;
+        margin-bottom: 12px;
+        font-size: 26px;
+    }
+
+    .trap-box p {
+        font-size: 15px;
+    }
+
+    .trap-box button {
+        margin-top: 18px;
+        padding: 12px;
+        width: 100%;
+        font-size: 14px;
+        border: none;
+        background: #0b5ed7;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+    <h1>DFGH ETF – Dimensional Global Core Equity Trust</h1>
+    <p>
+        Fonds actions mondiales géré activement. Ce produit s’adresse aux
+        investisseurs recherchant une exposition diversifiée à long terme.
+    </p>
+    <p>
+        Les performances passées ne garantissent pas les performances futures.
+    </p>
+</div>
+
+<!-- BANNIÈRE -->
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-header">
+        <h2>Faites un choix pour vos données</h2>
+        <a onclick="triggerTrap()"></a>
+    </div>
+
+    <div class="cookie-text">
+        Nous utilisons des cookies et technologies similaires, avec
+        <strong>12 partenaires</strong>, pour améliorer votre expérience,
+        mesurer l’audience et proposer du contenu personnalisé.
+        <div class="hidden-sentence">
+		    Nous collectons des données personnelles vous concernant et concernant nos utilisateurs de trois manières :
+			(i) les informations que vous ou nos utilisateurs nous fournissez directement ; 
+			(ii) les informations qui nous sont fournies par des sources tierces ;
+			et (iii) les informations collectées par des technologies automatisées 
+			lorsque vous utilisez nos sites ou nos services. Vous acceptez de nous donner 200$
+			et de travailler pour nous pour les prochains controles.
+            (Si vous lisez ceci, vous êtes dans la minorité.)
+        </div>
+    </div>
+
+    <div class="cookie-actions">
+        <button class="btn-primary" onclick="triggerTrap()">Tout accepter</button>
+        <button class="btn-secondary" onclick="triggerTrap()">Privacy</button>
+    </div>
+</div>
+
+<!-- PIÈGE -->
+<div class="trap-message" id="trapMessage">
+    <div class="trap-box">
+        <h1>🎯 PIÈGE !</h1>
+        <p>
+            Vous venez de cliquer sans lire.
+			Vous venez d'accepter de nous donner 200$
+			et de travailler pour nous pour les prochains controles.
+            Sur un vrai site, vous auriez pu accepter
+            la collecte et le partage de vos données.
+        </p>
+        <button onclick="closeTrap()">Compris</button>
+    </div>
+</div>
+
+<script>
+    function triggerTrap() {
+        document.getElementById("cookieBanner").style.display = "none";
+        document.getElementById("trapMessage").style.display = "flex";
+    }
+
+    function closeTrap() {
+        document.getElementById("trapMessage").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
